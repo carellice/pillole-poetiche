@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the app navigation and title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Pillole Poetiche')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Home' })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Autori' })).toBeInTheDocument();
 });
